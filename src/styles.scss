@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+:root {
+  font-size: 62.5%;
+}
 * {
   margin: 0;
   padding: 0;
@@ -12,4 +16,7 @@ body {
     #000000 48.94%,
     #c12a23 99.97%
   );
+  font-family: "Poppins", sans-serif;
+  color: white;
+
 }
