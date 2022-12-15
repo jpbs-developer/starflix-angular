@@ -25,13 +25,23 @@ describe('FooterComponent', () => {
       fixture.nativeElement.querySelector('.searchButton');
     const icon = searchButton.querySelector('img');
     const buttonSpan = searchButton.querySelector('span');
-    const description: HTMLElement = fixture.nativeElement.querySelector('.description');
+    const description: HTMLElement =
+      fixture.nativeElement.querySelector('.description');
 
     expect(searchButton).toBeTruthy();
     expect(buttonSpan?.textContent).toEqual('Encontrar filme');
     expect(icon).toBeTruthy();
     expect(description).toBeTruthy();
-    expect(description.textContent?.trim())
-      .toEqual(`Clique em "Encontrar filme" que traremos informações de algum filme para você assistir hoje.`);
+    expect(description.textContent?.trim()).toEqual(
+      `Clique em "Encontrar filme" que traremos informações de algum filme para você assistir hoje.`
+    );
+  });
+
+  it('should emit the event from (@Output onClicked) when click on button', () => {
+    const spy = spyOn(component.onClicked, 'emit');
+    const searchButton: HTMLButtonElement =
+      fixture.nativeElement.querySelector('.searchButton');
+    searchButton.click();
+    expect(spy).toHaveBeenCalledTimes(1);
   });
 });
