@@ -7,7 +7,7 @@ import {
 import { environment } from 'src/environments/environment';
 import { Movie } from 'src/app/movie';
 
-function buildTheMovie() {
+export function buildTheMovie() {
   const movie: Movie = {
     adult: false,
     backdrop_path: '/hZkgoQYus5vegHoetLkCJzb17zJ.jpg',

@@ -1,7 +1,11 @@
 .movie-container {
   display: flex;
   gap: 3.4rem;
-  margin-top: 4.2rem;
+  margin-top: 2rem;
+  .movie-thumb{
+    width: 30rem;
+    object-fit: cover;
+  }
   h2 {
     font-size: 2rem;
   }

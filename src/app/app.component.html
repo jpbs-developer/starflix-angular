@@ -1,6 +1,10 @@
 <section class="container">
   <app-header></app-header>
-  <app-movie></app-movie>
-  <app-no-movie></app-no-movie>
-  <app-footer></app-footer>
+  <ng-container *ngIf="movie$ | async as movie; else noMovie">
+    <app-movie [movie]="movie" class="movie"></app-movie>
+  </ng-container>
+  <ng-template #noMovie>
+    <app-no-movie class="no-movie"></app-no-movie>
+  </ng-template>
+  <app-footer (onClicked)="getMovie()"></app-footer>
 </section>
